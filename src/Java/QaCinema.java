@@ -5,8 +5,10 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -150,12 +152,12 @@ public class QaCinema {
 				braveFrame.add(ticketOptions, BorderLayout.CENTER);
 				braveFrame.add(finishedBuying, BorderLayout.SOUTH);
 				braveFrame.setSize(300,500);
+				braveFrame.setLocationRelativeTo(mainFrame);
 				braveFrame.setVisible(true);
 				
 			}
 			
 		});
-		
 		JButton monstersIncBtn = new JButton(monstersInc.getName());
 		monstersIncBtn.addActionListener(new ActionListener() {
 
@@ -268,6 +270,7 @@ public class QaCinema {
 				monstersFrame.add(ticketOptions, BorderLayout.CENTER);
 				monstersFrame.add(finishedBuying, BorderLayout.SOUTH);
 				monstersFrame.setSize(300,500);
+				monstersFrame.setLocationRelativeTo(mainFrame);
 				monstersFrame.setVisible(true);
 				
 			}
@@ -377,6 +380,7 @@ public class QaCinema {
 				screamFrame.add(ticketOptions, BorderLayout.CENTER);
 				screamFrame.add(finishedBuying, BorderLayout.SOUTH);
 				screamFrame.setSize(300,500);
+				screamFrame.setLocationRelativeTo(mainFrame);
 				screamFrame.setVisible(true);
 			}
 			
@@ -391,8 +395,54 @@ public class QaCinema {
 		mainFrame.add(welcomeMessage, BorderLayout.NORTH);
 		mainFrame.add(filmPanel, BorderLayout.CENTER);
 		mainFrame.setSize(450,200);
+		mainFrame.setLocationRelativeTo(null);
+		mainFrame.addWindowListener(new WindowListener() {
+
+			@Override
+			public void windowActivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowIconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowOpened(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		mainFrame.setVisible(true);
-		/*
+		
+		/*initial work to ensure basic functionality
 		System.out.println("Welcome to QA Cinemas");
 		System.out.println("How are you: " + user.getName());
 		System.out.println("Please select the film you wish to watch by entering the number shown next to it: ");
